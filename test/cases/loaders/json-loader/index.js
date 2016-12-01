@@ -23,3 +23,12 @@ it("should still be possible to use a custom loader", function() {
 	someJson.should.have.property("it", "works");
 	someJson.should.have.property("number", 42);
 });
+
+it("should parse different json types", function() {
+	var n = require("./n");
+	var s = require("./s");
+	var a = require("./a");
+	n.should.be.eql(-56.75e-2);
+	s.should.be.eql("string");
+	a.should.be.eql([]);
+});
